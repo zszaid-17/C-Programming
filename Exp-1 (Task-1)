@@ -1,0 +1,19 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+    
+#include <stdio.h>
+
+int main()
+{
+       printf("Name:\t Zaid Shaikh \n");
+       printf("Age:\t 18 \n");
+       printf("Class: \t F.E.Mechanical \n" );
+       printf("Division: F1\n");
+       printf("UIN: \t 251M007 \n");
+return 0;
+}
+
+
