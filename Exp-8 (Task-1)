@@ -1,0 +1,34 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+  #include <stdio.h>
+#include <string.h> // Include this for the strlen function to help with newline removal
+
+int main() {
+    char str[100];
+    int i = 0;
+    size_t len;
+
+    printf("Enter a string: ");
+    
+    // FIX: fgets requires the buffer, the size, and the input stream (stdin)
+    if (fgets(str, sizeof(str), stdin) == NULL) {
+        printf("\nError reading input.\n");
+        return 1;
+    }
+
+    // FIX: Remove the newline character ('\n') captured by fgets()
+    len = strlen(str);
+    if (len > 0 && str[len - 1] == '\n') {
+        str[len - 1] = '\0';
+    }
+
+    // Your original loop to calculate length
+    while(str[i] != '\0')
+        i++;
+
+    printf("Length of string = %d\n", i);
+    return 0;
+}
