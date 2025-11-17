@@ -1,0 +1,22 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+    
+#include <stdio.h>
+
+int main() {
+    int num;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("%d is even.\n", num);
+    } else {
+        printf("%d is odd.\n", num);
+    }
+
+    return 0;
+}
