@@ -1,0 +1,20 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+    #include <stdio.h>
+
+void counter_function() {
+    static int count = 0; // 'static' ensures the value persists
+    count++;
+    printf("Function called %d time(s)\\n", count);
+}
+
+int main() {
+    // Call the function multiple times to demonstrate the counter
+    counter_function();
+    counter_function();
+    counter_function();
+    return 0;
+}
