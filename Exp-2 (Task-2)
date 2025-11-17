@@ -1,0 +1,35 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+#include <stdio.h>
+int main() {
+    int num1, num2, start, end, sum = 0, i;
+
+    // Prompt user for input
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    // Determine the smaller and larger number
+    if (num1 < num2) {
+        start = num1;
+        end = num2;
+    } else {
+        start = num2;
+        end = num1;
+    }
+    // Iterate from start to end (exclusive of end, as per "between" wording)
+    // If "between" is inclusive, change the loop condition to i <= end
+    for (i = start + 1; i < end; i++) {
+        if (i % 2 != 0) {
+            sum += i;
+        }
+    }
+    // Print the result
+    printf("The sum of all odd numbers between %d and %d is: %d\n", num1, num2, sum);
+
+    return 0;
+}
