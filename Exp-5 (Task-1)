@@ -1,0 +1,63 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+    #include <stdio.h>
+// 1. Iterative Function
+long long factorial_iterative(int n) {
+    // Factorial is not defined for negative numbers.
+    if (n < 0) {
+        return -1; // Use -1 to indicate an error or invalid input
+    }
+    // Base case: 0! and 1! is 1
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    // Use long long for result to handle larger factorials
+    long long result = 1;
+    // Multiply result by every number from 2 up to n
+    for (int i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+// 2. Recursive Function
+long long factorial_recursive(int n) {
+    // Factorial is not defined for negative numbers.
+    if (n < 0) {
+        return -1; // Error indicator
+    }
+    // Base Case: Stops the recursion
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    // Recursive Case: n * factorial of (n-1)
+    return (long long)n * factorial_recursive(n - 1);
+    }
+    // Main function to demonstrate the two methods
+    int main() {
+    int number =7;
+    long long result_iterative;
+    long long result_recursive;
+    printf("--- Factorial Calculation (C) ---\n");
+    // Test Iterative Function
+    result_iterative = factorial_iterative(number);
+    if (result_iterative != -1) {
+        printf("Factorial of %d (Iterative): %lld\n", number, result_iterative);
+    } else {
+        printf("Error: Factorial not defined for negative numbers.\n");
+    }
+    // Test Recursive Function
+    result_recursive = factorial_recursive(number);
+    if (result_recursive != -1) {
+        printf("Factorial of %d (Recursive): %lld\n", number, result_recursive);
+    } else {
+        printf("Error: Factorial not defined for negative numbers.\n");
+    }
+    // Example of a larger number (e.g., 20) to demonstrate the use of long long
+    int large_num = 20;
+    printf("\nFactorial of %d (Iterative): %lld\n", large_num, factorial_iterative(large_num));
+
+    return 0;
+    }
