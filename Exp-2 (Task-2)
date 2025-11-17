@@ -6,7 +6,6 @@
 #include <stdio.h>
 int main() {
     int num1, num2, start, end, sum = 0, i;
-
     // Prompt user for input
     printf("Enter the first number: ");
     scanf("%d", &num1);
@@ -30,6 +29,5 @@ int main() {
     }
     // Print the result
     printf("The sum of all odd numbers between %d and %d is: %d\n", num1, num2, sum);
-
-    return 0;
-}
+     return 0;
+    }
