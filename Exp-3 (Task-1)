@@ -1,0 +1,65 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+#include <stdio.h>
+int main() {
+    int choice;
+    float a, b, result;
+    menu:
+    printf("\nMenu:\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("5. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    switch (choice) {
+        case 1:
+            goto addition;
+        case 2:
+            goto subtraction;
+        case 3:
+            goto multiplication;
+        case 4:
+            goto division;
+        case 5:
+            goto exit_program;
+        default:
+            printf("Invalid choice!\n");
+            goto menu;
+    }
+    addition:
+    printf("Enter two numbers: ");
+    scanf("%f %f", &a, &b);
+    result = a + b;
+    printf("Result: %.2f\n", result);
+    goto menu;
+    subtraction:
+    printf("Enter two numbers: ");
+    scanf("%f %f", &a, &b);
+    result = a - b;
+    printf("Result: %.2f\n", result);
+    goto menu;
+    multiplication:
+    printf("Enter two numbers: ");
+    scanf("%f %f", &a, &b);
+    result = a * b;
+    printf("Result: %.2f\n", result);
+    goto menu;
+    division:
+    printf("Enter two numbers: ");
+    scanf("%f %f", &a, &b);
+    if (b != 0) {
+        result = a / b;
+        printf("Result: %.2f\n", result);
+    } else {
+        printf("Error: Division by zero!\n");
+    }
+    goto menu;
+    exit_program:
+    printf("Exiting program.\n");
+    return 0;
+}
