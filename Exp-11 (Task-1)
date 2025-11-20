@@ -1,0 +1,72 @@
+/* Name:- Zaid Shaikh
+    Roll no:- 07
+    Class:- F - F1
+    Branch:- F.E.Mechanical
+    UIN:- 251M007 */
+    #include <stdio.h>
+#include <stdlib.h> // For exit()
+// Structure to represent an employee
+struct Employee {
+    int id;
+    char name[50];
+    float salary;
+};
+// Function to add a new employee record
+void addEmployee() {
+    FILE *fp;
+    struct Employee emp;
+    fp = fopen("employees.dat", "ab"); // Open in append binary mode
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return;
+    }
+    printf("\nEnter Employee ID: ");
+    scanf("%d", &emp.id);
+    printf("Enter Employee Name: ");
+    scanf("%s", emp.name);
+    printf("Enter Employee Salary: ");
+    scanf("%f", &emp.salary);
+    fwrite(&emp, sizeof(struct Employee), 1, fp); // Write the employee struct to file
+    fclose(fp);
+    printf("Employee added successfully!\n");
+}
+// Function to display all employee records
+void displayEmployees() {
+    FILE *fp;
+    struct Employee emp;
+    fp = fopen("employees.dat", "rb"); // Open in read binary mode
+    if (fp == NULL) {
+        printf("No employee records found.\n");
+        return;
+    }
+    printf("\n--- Employee Records ---\n");
+    while (fread(&emp, sizeof(struct Employee), 1, fp) == 1) { // Read records one by one
+        printf("ID: %d, Name: %s, Salary: %.2f\n", emp.id, emp.name, emp.salary);
+    }
+    fclose(fp);
+}
+int main() {
+    int choice;
+    do {
+        printf("\nEmployee Database Menu:\n");
+        printf("1. Add Employee\n");
+        printf("2. Display Employees\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                addEmployee();
+                break;
+            case 2:
+                displayEmployees();
+                break;
+            case 3:
+                printf("Exiting program.\n");
+                exit(0);
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 3);
+    return 0;
+}
